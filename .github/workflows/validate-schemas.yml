@@ -1,14 +1,17 @@
 name: validate-schemas
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - "schemas/**"
       - "tools/**"
+      - ".github/workflows/validate-schemas.yml"
   pull_request:
     paths:
       - "schemas/**"
       - "tools/**"
+      - ".github/workflows/validate-schemas.yml"
 
 permissions:
   contents: read
