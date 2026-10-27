@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cpintl-org.github.io/schemas/hierarchy-relation.schema.json",
+  "title": "CPINTL Hierarchy Relation",
+  "description": "One row of CPINTL_HIERARCHY_RELATIONS.csv after conversion to a JSON object. Endpoint types depend on relation_type.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "relation_id",
+    "relation_type",
+    "from_id",
+    "to_id",
+    "basis",
+    "status"
+  ],
+  "properties": {
+    "relation_id": {
+      "type": "string",
+      "pattern": "^REL-[0-9]{4}$"
+    },
+    "relation_type": {
+      "enum": [
+        "REPORTS_TO",
+        "ACCOUNTABLE_TO",
+        "MANAGES",
+        "SUPPORTS",
+        "MEMBER_OF"
+      ]
+    },
+    "from_id": {
+      "type": "string",
+      "pattern": "^((GLB|HQ|BGD|THA|MMR)-(ORG|HQT|MSN|GOV|COM|DIV|DEP|UNT|SUB)-[A-Z0-9]{2,8}|POS-(HQ|BGD|THA|MMR)-[0-9]{3})$"
+    },
+    "to_id": {
+      "type": "string",
+      "pattern": "^((GLB|HQ|BGD|THA|MMR)-(ORG|HQT|MSN|GOV|COM|DIV|DEP|UNT|SUB)-[A-Z0-9]{2,8}|POS-(HQ|BGD|THA|MMR)-[0-9]{3})$"
+    },
+    "basis": {
+      "enum": [
+        "S",
+        "U",
+        "P"
+      ]
+    },
+    "status": {
+      "enum": [
+        "Active",
+        "Proposed",
+        "Interim",
+        "Retired"
+      ]
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "relation_type": {
+            "const": "REPORTS_TO"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "from_id": {
+            "type": "string",
+            "pattern": "^POS-(HQ|BGD|THA|MMR)-[0-9]{3}$"
+          },
+          "to_id": {
+            "type": "string",
+            "pattern": "^POS-(HQ|BGD|THA|MMR)-[0-9]{3}$"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "relation_type": {
+            "const": "MANAGES"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "from_id": {
+            "type": "string",
+            "pattern": "^POS-(HQ|BGD|THA|MMR)-[0-9]{3}$"
+          },
+          "to_id": {
+            "type": "string",
+            "pattern": "^(GLB|HQ|BGD|THA|MMR)-(ORG|HQT|MSN|GOV|COM|DIV|DEP|UNT|SUB)-[A-Z0-9]{2,8}$"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "relation_type": {
+            "const": "SUPPORTS"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "from_id": {
+            "type": "string",
+            "pattern": "^(GLB|HQ|BGD|THA|MMR)-(ORG|HQT|MSN|GOV|COM|DIV|DEP|UNT|SUB)-[A-Z0-9]{2,8}$"
+          },
+          "to_id": {
+            "type": "string",
+            "pattern": "^(GLB|HQ|BGD|THA|MMR)-(ORG|HQT|MSN|GOV|COM|DIV|DEP|UNT|SUB)-[A-Z0-9]{2,8}$"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "relation_type": {
+            "const": "MEMBER_OF"
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "from_id": {
+            "type": "string",
+            "pattern": "^POS-(HQ|BGD|THA|MMR)-[0-9]{3}$"
+          },
+          "to_id": {
+            "type": "string",
+            "pattern": "^(GLB|HQ|BGD|THA|MMR)-(ORG|HQT|MSN|GOV|COM|DIV|DEP|UNT|SUB)-[A-Z0-9]{2,8}$"
+          }
+        }
+      }
+    }
+  ]
+}
