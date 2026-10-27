@@ -1,0 +1,107 @@
+{
+  "$comment": "Machine-readable CPI brand palette. The former plum is retired; primary is CPI Magenta.",
+  "brand": "Community Partners International (CPI)",
+  "version": "2026-10",
+  "primary": {
+    "name": "CPI Magenta",
+    "hex": "#D91E4D",
+    "rgb": [
+      218,
+      30,
+      78
+    ],
+    "cmyk": [
+      10,
+      100,
+      65,
+      0
+    ],
+    "pantone": "7636C",
+    "use": "Titles, covers, header bars, rules, major emphasis, key figures"
+  },
+  "neutral": {
+    "name": "CPI Charcoal",
+    "hex": "#2D2926",
+    "rgb": [
+      45,
+      41,
+      38
+    ],
+    "pantone": "Black C",
+    "use": "Body text and high-contrast neutral"
+  },
+  "background": {
+    "name": "Pure White",
+    "hex": "#FFFFFF",
+    "rgb": [
+      255,
+      255,
+      255
+    ],
+    "use": "Page and slide background"
+  },
+  "secondary": [
+    {
+      "name": "CPI Teal",
+      "hex": "#4298B5",
+      "rgb": [
+        66,
+        152,
+        181
+      ],
+      "pantone": "7459C",
+      "use": "Data series, metrics, infographic callouts"
+    },
+    {
+      "name": "CPI Violet",
+      "hex": "#615E9B",
+      "rgb": [
+        97,
+        94,
+        155
+      ],
+      "pantone": "7669C",
+      "use": "Secondary chart series, tags"
+    },
+    {
+      "name": "CPI Slate Purple",
+      "hex": "#948794",
+      "rgb": [
+        148,
+        135,
+        148
+      ],
+      "pantone": "7653C",
+      "use": "Subtitles, borders, secondary text"
+    },
+    {
+      "name": "CPI Pale Mauve",
+      "hex": "#D0C4C5",
+      "rgb": [
+        208,
+        196,
+        197
+      ],
+      "pantone": "434C",
+      "use": "Card fills and table row striping"
+    }
+  ],
+  "contrast": {
+    "white_on_primary": 4.95,
+    "primary_on_white": 4.95,
+    "charcoal_on_white": 14.42,
+    "primary_on_pale_mauve": 2.92,
+    "note": "White on primary passes WCAG AA for normal text. Do not place primary text on pale mauve."
+  },
+  "typography": {
+    "primary_font": "Raleway",
+    "fallbacks": [
+      "Arial",
+      "Calibri",
+      "Georgia"
+    ],
+    "headings": "Raleway Bold",
+    "subheadings": "Raleway SemiBold",
+    "body": "Raleway Regular"
+  }
+}
