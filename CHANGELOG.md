@@ -8,6 +8,7 @@ All notable changes to this repository are recorded here, using the Keep a Chang
 - Site layout `_layouts/default.html`, footer text `_includes/footer.md` and brand style sheet `assets/css/style.scss`.
 - `CHANGELOG.md`.
 ### Changed
+- Workflow now pins `actions/checkout` to a full-length commit SHA (release v7.0.1), as the organization policy requires.
 - Folder `asstets/` renamed to `assets/` (spelling fix). The footer text moved from `asstets/_includes/` to `_includes/`, where the site builder can use it.
 - Footer credit now shows a role title instead of a personal name.
 - `README.md` and `BLUEPRINT.md` updated for the new files and folder.

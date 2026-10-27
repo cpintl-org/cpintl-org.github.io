@@ -231,7 +231,7 @@ jobs:
 Notes:
 
 - GitHub Actions is free for public repositories.
-- `actions/checkout` was at major version 7 (release 7.0.1) in July 2026. Check the current major version when you create the file. Version 7 changed the default behavior for the `pull_request_target` trigger; this workflow does not use that trigger.
+- The organization requires every action to be pinned to a full-length commit SHA, so the workflow uses `actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1` (release v7.0.1, shown in a comment). When you update it, look up the new release's full commit SHA and replace both the SHA and the version comment. Version 7 changed the default behavior for the `pull_request_target` trigger; this workflow does not use that trigger.
 - The YAML was parsed and the script steps were run locally. The workflow itself has not yet run on GitHub; the first run will confirm it.
 
 ### 5.6 `CHANGELOG.md` (phase 1)
