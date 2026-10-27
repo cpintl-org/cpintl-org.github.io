@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.url == '/' %}{{ site.title }}{% else %}{{ page.title }} | {{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="icon" type="image/png" href="{{ '/assets/img/cpi_logo_small.png' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <div class="wrapper">
+    <header>
+      <a href="{{ '/' | relative_url }}">
+        <img class="cpi-logo" src="{{ '/assets/img/cpi_logo_transparent_h_rgb.png' | relative_url }}" alt="Community Partners International (CPI)">
+      </a>
+      <p>{{ site.description }}</p>
+      <ul class="cpi-nav">
+        <li><a href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a href="{{ '/schemas/' | relative_url }}">Schemas</a></li>
+      </ul>
+    </header>
+    <section>
+      {{ content }}
+    </section>
+    <footer>
+      {% capture footer_text %}{% include footer.md %}{% endcapture %}
+      {{ footer_text | markdownify }}
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+title: Community Partners International (CPI)
+description: Public site and standards files of the CPINTL GitHub organization
+url: "https://cpintl-org.github.io"
+baseurl: ""
+lang: en
+theme: jekyll-theme-minimal
+exclude:
+  - README.md
+  - BLUEPRINT.md
+  - CHANGELOG.md
+  - tools/

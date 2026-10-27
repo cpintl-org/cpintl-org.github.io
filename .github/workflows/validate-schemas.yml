@@ -1,0 +1,29 @@
+name: validate-schemas
+
+on:
+  push:
+    paths:
+      - "schemas/**"
+      - "tools/**"
+  pull_request:
+    paths:
+      - "schemas/**"
+      - "tools/**"
+
+permissions:
+  contents: read
+
+jobs:
+  schemas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - name: Install jsonschema in a virtual environment
+        run: |
+          python3 -m venv .venv
+          . .venv/bin/activate
+          pip install jsonschema
+      - name: Check schemas
+        run: |
+          . .venv/bin/activate
+          python tools/check_schemas.py

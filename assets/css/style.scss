@@ -1,0 +1,19 @@
+---
+---
+@import "{{ site.theme }}";
+
+// CPI brand palette (see assets/img/palette.json)
+$cpi-magenta: #D91E4D;
+$cpi-charcoal: #2D2926;
+$cpi-mauve: #D0C4C5;
+
+body { color: $cpi-charcoal; font-family: Raleway, Arial, Calibri, Georgia, sans-serif; }
+h1, h2, h3, h4, h5, h6 { color: $cpi-magenta; }
+a { color: $cpi-magenta; }
+a:hover { color: $cpi-charcoal; }
+header img.cpi-logo { width: 100%; max-width: 270px; height: auto; margin-bottom: 10px; }
+ul.cpi-nav { list-style: none; padding-left: 0; }
+ul.cpi-nav li { margin-bottom: 4px; }
+table th { background: $cpi-mauve; color: $cpi-charcoal; }
+table tr:nth-child(even) td { background: rgba($cpi-mauve, 0.25); }
+code { word-break: break-all; }

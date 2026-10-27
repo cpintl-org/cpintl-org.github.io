@@ -2,7 +2,7 @@
 
 Design document for the repository `cpintl-org.github.io`: what it contains, why, how it is published, and how it is changed.
 
-> **Status:** draft for review. Blueprint version `0.1.0-draft.1`, dated 2026-10-27. Nothing in this document has been published yet.
+> **Status:** draft for review. Blueprint version `0.1.0-draft.2`, dated 2026-10-27. Nothing in this document has been published yet.
 
 ## 1. Purpose and scope
 
@@ -59,6 +59,10 @@ cpintl-org.github.io/
 |-- _config.yml                                phase 1   site settings and the exclude list
 |-- index.md                                   phase 1   home page
 |-- 404.md                                     phase 1   page shown for missing paths
+|-- _layouts/
+|   `-- default.html                           phase 1   page layout (logo, menu, footer)
+|-- _includes/
+|   `-- footer.md                              phase 1   footer text shown on every page
 |-- about/
 |   `-- index.md                               phase 2   about CPI (approved mission sentence only)
 |-- structure/
@@ -80,8 +84,8 @@ cpintl-org.github.io/
 |   `-- check_schemas.py                       phase 1   checks schemas are valid and $id matches the URL; not published
 |-- assets/
 |   |-- css/
-|   |   `-- style.scss                         phase 2   optional small style overrides
-|   `-- img/                                   phase 2   approved logo and images only (no photos of people)
+|   |   `-- style.scss                         phase 1   CPI brand colours on top of the built-in theme
+|   `-- img/                                   phase 1   approved logos and palette.json (no photos of people)
 `-- .github/
     `-- workflows/
         `-- validate-schemas.yml               phase 1   runs the schema check on every change
@@ -101,6 +105,7 @@ Must never exist in this repository:
 |---|---|---|
 | Root `.md` documents | Repository documentation | No (excluded in `_config.yml`) |
 | `_config.yml` | Site title, description, theme, exclude list | No |
+| `_layouts/`, `_includes/` | Page layout and footer text | No (used to build pages) |
 | `about/`, `structure/`, `glossary/`, `standards/` | Public information pages | Yes |
 | `schemas/` | Public schemas at stable URLs | Yes |
 | `tools/` | Maintenance scripts | No (excluded) |

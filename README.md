@@ -30,7 +30,7 @@ Public website and public standards files of the CPINTL GitHub organization, pub
 
 Community Partners International (CPI) is a nonprofit that works to empower vulnerable communities in Asia to meet their essential health, humanitarian, and development needs.
 
-> **Status:** draft for review. Version of this repository plan: `0.1.0-draft.1` (see `BLUEPRINT.md`).
+> **Status:** draft for review. Version of this repository plan: `0.1.0-draft.2` (see `BLUEPRINT.md`).
 
 ## What this repository is for
 
@@ -72,6 +72,8 @@ cpintl-org.github.io/
   BLUEPRINT.md
   CHANGELOG.md
   _config.yml
+  _layouts/
+  _includes/
   index.md
   404.md
   about/
